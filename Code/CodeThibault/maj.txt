@@ -1,0 +1,7 @@
+ 05/06/2015
+	- modification de la vue élémentaire toutes_annonces.
+	  mise en place pour chaque annonces, placmement avec modification de la taille de fenêtre "acceptable" mais non responsive.
+	  Attention au border minimum par rapport à la photo.
+	  test avec plusieurs photo à tester.
+	- Rajout d'une deuxième annonce avec test. Trop de blanc, reste à svoir pourquoi.
+	  test de trich par un after ?

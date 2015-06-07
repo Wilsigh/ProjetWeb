@@ -1,0 +1,66 @@
+<!-- Vue à afficher lors d'un enchainement d'action invalide-->
+
+<!-- Vue à afficher pour les annonces -->
+<h3> Liste des annonces du site </h3> 
+<!--Création d'un tableau pour l'affichage des annonces-->
+<table border="5" class="tp">
+<tr>
+	<td> Numero Annonce </td>
+	<td> Auteur </td>
+	<td> Titre </td>
+	<td> Description </td>
+	<td> Type </td>
+	<td> Date</td>
+	<td> </td>
+</tr>
+
+<?php
+//Connexion à la BD
+$connexionMYSQL = mysqli_connect ($bd[host],$bd[login],$bd[motdepasse],$bd[nomBase]);
+
+//Vérification de la connexion
+if (! $connexionMYSQL)
+echo "impossible de se connecter au serveur MySQL";
+
+//Connexion OK
+if ($connexionMYSQL)
+ {
+	 $mail=$_SESSION['mail'];
+	//Requete de select dans la table historique
+	$rq = "select id_annonce,email_auteur,titre_annonce,descriptif_annonce,type_animal,date_annonce
+	from annonces order by(date_annonce) desc";
+	
+	 $resultatRequete = mysqli_query ($connexionMYSQL,$rq);
+	 
+	 $nb = mysqli_num_rows($resultatRequete);
+	 
+	 if ($nb==0)
+	 {
+	 echo "vous n'avez pas encore cree d'annonce";
+	 }
+	 else
+	 {
+	 //Boucle d'affichage
+	 for($i=0; $i < $nb; $i++){
+		 //Affichage des résultat dans différente Lignes
+       $results=mysqli_fetch_row($resultatRequete);
+  		echo "<tr><td>$results[0]</td>";
+  		echo "<td>$results[1]</td>";
+  		echo "<td>$results[2]</td>";
+  		echo "<td>$results[3]</td>";
+  		echo "<td>$results[4]</td>";
+		echo "<td>$results[5]</td>";
+		echo "<td><a href='controleur.php?action=actionAdmin_supprimerAnnonce&numAnnonce=$results[0]'><img src='ressources/img/Corbeille.png' alt='Supprimer'/> </a></td>";
+  		echo"</tr>";
+        }
+   	}
+ }
+
+?>
+<!--Fermeture du tableau-->
+</table>
+
+<p>
+<!--Lien vers la page d'accueil-->
+<a href="controleur.php?action=action_accueil"> Revenir &agrave; la page d'accueil </a>
+</p>

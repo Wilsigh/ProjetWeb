@@ -1,0 +1,29 @@
+﻿<!-- Vue à afficher pour l'identification -->
+
+<!--Formulaire de connexion-->
+<form name = "Connexion" action="controleur.php?action=action_connecter" method="POST">
+<h3> Connexion </h3>
+
+<!--Création d'un tableau -->
+<table align="center">
+<tr><td>Login :</td>
+<td><input type="text" required="required" pattern="[a-zA-Z][a-zA-Z0-9._-]{2,20}" name="login" size="8"/> </td>
+<!-- la fonction pattern  empeche la saisi de caractères spéciaux -->
+</tr>
+
+<tr>	<td>Mot de passe :</td>
+<td><input type="password" required="required" name="motdepasse" size="8" /></td>
+</tr>
+</table>
+<p id=txt_erreur_id>Erreur : Login ou mot de passe incorrect</p>
+
+<p>
+<br/>
+
+<input type="submit" value="S'identifier" />
+</p>
+
+</form>
+
+<a href="controleur.php?action=action_inscription">Inscription</a>
+

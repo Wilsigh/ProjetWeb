@@ -1,0 +1,43 @@
+﻿<?php
+  echo "<p> Résultats de votre recherche</p>";
+  if($donneesVue['nbResultats']==0) 
+   {
+     // aucune annonce trouvée
+     echo"<h3> Recherche infructueuse </h3>";
+     echo"Aucun resultat <br />";
+   }
+  else
+   {
+     // on a des annonces en résultat, il faut les afficher
+ 
+     for ($i=0 ; $i<$donneesVue['nbResultats'] ; $i++) 
+     {
+       $regleDeStyle="annonces";
+       echo"<div id=\"$regleDeStyle\">";
+       echo "Annonce numero : ".$donneesVue['resultats'][$i]['numero']."<br />";
+       echo "Posté par : ".$donneesVue['resultats'][$i]['auteur']."<br />";
+       echo "Titre : ".$donneesVue['resultats'][$i]['titre']."<br />";
+       echo "Description: ".$donneesVue['resultats'][$i]['description']."<br />";
+	   echo "dateAnnonce : ".$donneesVue['resultats'][$i]['dateAnnonce']."<br />";
+	   echo "PRIX : ".$donneesVue['resultats'][$i]['prix']."<br />";
+	   echo "type : ".$donneesVue['resultats'][$i]['type']."<br />";
+	   echo "race : ".$donneesVue['resultats'][$i]['race']."<br />";
+	   echo "sexe : ".$donneesVue['resultats'][$i]['sexe']."<br />";
+    
+       // Affichage de la photo de l'annonce
+       $fichierphoto ='img1.jpg';
+	   $dossier=$donneesVue['resultats'][$i]['numero'];
+
+
+       if (file_exists("photosAnnonces/$dossier/$fichierphoto"))
+         echo "<img src=\"photosAnnonces/$dossier/$fichierphoto\" />";
+       else
+         echo "<img src=\"photosAnnonces/default/default.jpg\" />";
+ 
+       echo"</div>";
+     }
+   }
+?>
+
+
+

@@ -1,0 +1,71 @@
+
+<!-- Mise en place du formulaire -->
+<form method="post" action="controleur.php?action=actionPro_creerAnnonce">
+
+  <p> <b>Creation d'une nouvelle annonce </b> </p>
+   
+  <p>
+	<label for="titre">Titre :</label></br>
+    <input type="text" name="titre" size="40" required="required" />
+  </p>
+  <p> 
+    <label for="descriptif">Descriptif :</label></br>
+    <textarea name="descriptif" rows="10" cols="50" /></textarea>
+    </p>
+  <p>
+    <label for="type">Type :</label>
+    <select name="type" id="sexe">
+	<option value="Chien">Chien</option>
+	<option value="Chat">Chat</option>
+	<option value="Poisson">Poisson</option>
+	<option value="Oiseau">Oiseau</option>
+	<option value="Rongeur">Rongeur</option>
+	<option value="Reptile">Reptile</option>
+	<option value="Autre">Autre</option>
+	</select>
+  </p>
+  <p>
+    <label for="sexe">Sexe :</label>
+    <select name="sexe" id="sexe">
+	<option value="Male">Mâle</option>
+	<option value="Femelle">Femelle</option>
+	</select>
+  </p>
+  <p> Race :
+    <input type="text" name="race" required="required"/>
+  </p>
+  
+  <p>Naissance : 
+    <input type="date" name="naissance" required="required" />
+  </p>
+  <p> Tatoue : 
+    <input type="checkbox" value="oui" name="tatoue" />
+    </p>
+  <p> Puce :
+    <input type="checkbox" value="oui" name="puce"/>
+  </p>
+  <p> Sterilise :
+    <input type="checkbox" value="oui" name="sterilise"/>
+  </p>
+  <p>Prix : 
+    <input type="number" name="prix" required="required" />
+  </p>
+  
+<!-- PHOTO --> 
+  <p> Vous pouvez Joindre jusqu'a 5 photos à votre annonce </p>
+  <p><input type="file" name="fichier" size="50" maxlength="500" /></p>
+  <p><input type="file" name="fichier" size="50" maxlength="500" /></p>
+  <p><input type="file" name="fichier" size="50" maxlength="500" /></p>
+  <p><input type="file" name="fichier" size="50" maxlength="500" /></p>
+  <p><input type="file" name="fichier" size="50" maxlength="500" /></p>
+  
+  <p>
+    <input type="submit" name="submit" value="Creer l'annonce"/>
+  </p>
+</form>
+<br>
+<!--Lien vers la page d'accueil-->
+<p>
+<!--Lien vers la page d'accueil-->
+<a href="controleur.php?action=action_accueil"> Revenir &agrave; la page d'accueil </a>
+</p>

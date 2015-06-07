@@ -1,0 +1,88 @@
+﻿<html>
+<p> Les Dernières Annonces </p>
+<?php 
+  // Connexion à la base de données
+     $connexion = new PDO( $dns, $bd['login'], $bd['motdepasse']);
+
+     $requete="select * from annonces";
+
+  // $requete >> Exécution de la requête >> $resultatRequete
+     $resultatRequete = $connexion->query($requete);
+
+  // On précise que l'on souhaite récupérer les résultats sous forme d'objets
+  $resultatRequete->setFetchMode(PDO::FETCH_OBJ);
+
+  // $resultatRequete >> Déterminer le nombre de résultats >>  $nbResultats
+   $nbResultats = $resultatRequete->rowCount();
+
+// -------------------------------------------------------
+// Exécuter l'action (suite)
+// -------------------------------------------------------
+
+// $resultatRequete >> Stockage des annonces résultats dans un tableau qui sera transmis à la vue
+
+          for ($i=0 ; $i<$nbResultats ; $i++)
+          {
+            // $resultatRequete >> Récupération de toutes les données d'une annonce >> 
+            $annonceCourante = $resultatRequete->fetch();
+
+          //Mémorisation des données de l'annonce courrante
+            $annoncesResultats[$i]['numero'] = utf8_encode($annonceCourante->id_annonce);
+            $annoncesResultats[$i]['auteur'] = utf8_encode($annonceCourante->email_auteur);
+            $annoncesResultats[$i]['titre'] = utf8_encode($annonceCourante->titre_annonce);
+            $annoncesResultats[$i]['description'] = utf8_encode($annonceCourante->descriptif_annonce);
+            $annoncesResultats[$i]['dateAnnonce'] = $annonceCourante->date_annonce;
+			$annoncesResultats[$i]['prix'] = $annonceCourante->prix_annonce;
+			$annoncesResultats[$i]['type'] = utf8_encode($annonceCourante->type_animal);
+            $annoncesResultats[$i]['race'] = utf8_encode($annonceCourante->race_animal);
+            $annoncesResultats[$i]['sexe'] = utf8_encode($annonceCourante->sexe_animal);
+
+          }  
+// Définition des données DYNAMIQUES de la vue
+    $donneesVue['nbResultats']=$nbResultats;
+    $donneesVue['resultats']=$annoncesResultats;
+// Déconnexion de la base de données
+$connexion = null;
+
+
+  if($donneesVue['nbResultats']==0) 
+   {
+     // aucune annonce trouvée
+     echo"<h3> Recherche infructueuse </h3>";
+     echo"Aucun resultat <br />";
+   }
+  else
+   {
+     // on a des fiches champignon en résultat, il faut les afficher
+ 
+     for ($i=0 ; $i<$donneesVue['nbResultats'] ; $i++) 
+     {
+       $regleDeStyle="annonces";
+       echo"<div id=\"$regleDeStyle\">";
+       echo "Annonce numero : ".$donneesVue['resultats'][$i]['numero']."<br />";
+       echo "Posté par : ".$donneesVue['resultats'][$i]['auteur']."<br />";
+       echo "Titre : ".$donneesVue['resultats'][$i]['titre']."<br />";
+       echo "Description: ".$donneesVue['resultats'][$i]['description']."<br />";
+	   echo "dateAnnonce : ".$donneesVue['resultats'][$i]['dateAnnonce']."<br />";
+	   echo "PRIX : ".$donneesVue['resultats'][$i]['prix']."<br />";
+	   echo "type : ".$donneesVue['resultats'][$i]['type']."<br />";
+	   echo "race : ".$donneesVue['resultats'][$i]['race']."<br />";
+	   echo "sexe : ".$donneesVue['resultats'][$i]['sexe']."<br />";
+    
+       // Affichage de la photo de l'annonce
+       $fichierphoto ='img1.jpg';
+	   $dossier=$donneesVue['resultats'][$i]['numero'];
+
+
+       if (file_exists("photosAnnonces/$dossier/$fichierphoto"))
+         echo "<img src=\"photosAnnonces/$dossier/$fichierphoto\" />";
+       else
+         echo "<img src=\"photosAnnonces/default/default.jpg\" />";
+ 
+       echo"</div>";
+     }
+   }
+?>
+
+</html>
+

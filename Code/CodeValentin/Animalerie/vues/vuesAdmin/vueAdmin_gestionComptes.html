@@ -1,0 +1,62 @@
+<!-- Vue à afficher lors d'un enchainement d'action invalide-->
+
+<!-- Vue à afficher pour les comptes -->
+<h3> Liste des comptes du site </h3> 
+<!--Création d'un tableau pour l'affichage des comptes-->
+<table border="5" class="tp">
+<tr>
+	<td> Email </td>
+	<td> Type </td>
+	<td> Nom </td>
+	<td> Prenom </td>
+	<td> </td>
+</tr>
+
+<?php
+//Connexion à la BD
+$connexionMYSQL = mysqli_connect ($bd[host],$bd[login],$bd[motdepasse],$bd[nomBase]);
+
+//Vérification de la connexion
+if (! $connexionMYSQL)
+echo "impossible de se connecter au serveur MySQL";
+
+//Connexion OK
+if ($connexionMYSQL)
+ {
+	 $mail=$_SESSION['mail'];
+	//Requete de select dans la table historique
+	$rq = "select email_utilisateur,type_utilisateur,nom_utilisateur,prenom_utilisateur
+	from utilisateurs order by(nom_utilisateur) asc";
+	
+	 $resultatRequete = mysqli_query ($connexionMYSQL,$rq);
+	 
+	 $nb = mysqli_num_rows($resultatRequete);
+	 
+	 if ($nb==0)
+	 {
+	 echo "ERREUR";
+	 }
+	 else
+	 {
+	 //Boucle d'affichage
+	 for($i=0; $i < $nb; $i++){
+		 //Affichage des résultat dans différente Lignes
+       $results=mysqli_fetch_row($resultatRequete);
+  		echo "<tr><td>$results[0]</td>";
+  		echo "<td>$results[1]</td>";
+  		echo "<td>$results[2]</td>";
+  		echo "<td>$results[3]</td>";
+		echo "<td><a href='controleur.php?action=actionAdmin_supprimerCompte&id_compte=$results[0]'><img src='ressources/img/Corbeille.png' alt='Supprimer'/> </a></td>";
+  		echo"</tr>";
+        }
+   	}
+ }
+
+?>
+<!--Fermeture du tableau-->
+</table>
+
+<p>
+<!--Lien vers la page d'accueil-->
+<a href="controleur.php?action=action_accueil"> Revenir &agrave; la page d'accueil </a>
+</p>

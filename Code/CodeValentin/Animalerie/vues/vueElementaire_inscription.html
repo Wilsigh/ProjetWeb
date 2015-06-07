@@ -1,0 +1,27 @@
+
+<!-- Mise en place du formulaire -->
+<form method="post" action="controleur.php?action=action_enregistrerUtilisateur">
+
+  <p> <b>Enregistrement d'un nouvel utilisateur</b> </p>
+   
+   <!--Nom de l'utilisateur(3 caractères minimum,uniquement des caractères alphabétiques)-->
+  <p>Mail : 
+    <input type="text" name="mail" required="required" />
+  </p>
+  <!--Prenom de l'utilisateur(3 caractères minimum,uniquement des caractères alphabétiques)-->
+  <p> Mot de Passe : 
+    <input type="password" name="mdp" required="required" pattern="[a-zA-Z][a-zA-Z0-9._-]{2,32}" />
+    </p>
+  <p>Prenom :
+    <input type="text" name="prenom" required="required" />
+  </p>
+  <p> Nom :
+    <input type="text" name="nom" required="required"/>
+  </p>
+  <p>
+    <input type="submit" name="submit" value="Inscription">
+  </p>
+</form>
+<br>
+<!--Lien vers la page d'identification-->
+<a href="index.php">Revenir a l'accueil</a>
