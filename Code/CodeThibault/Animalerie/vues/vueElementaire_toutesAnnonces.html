@@ -108,9 +108,9 @@ $connexion = null;
 
 
        if (file_exists("photosAnnonces/$dossier/$fichierphoto"))
-         echo "<img src=\"photosAnnonces/$dossier/$fichierphoto\" />";
+         echo "<img id=\"info_img\" src=\"photosAnnonces/$dossier/$fichierphoto\" />";
        else
-         echo "<img src=\"photosAnnonces/default/default.jpg\" />";
+         echo "<img id=\"info_img\" src=\"photosAnnonces/default/default.jpg\" />";
  
 	   echo "</section>"; //fin div image_information
        echo "</div>"; //fin div annonce $i
