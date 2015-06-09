@@ -1,5 +1,5 @@
 ﻿<html>
-<p> Les Dernières Annonces</p>
+<p class="titre"> Les Dernières Annonces :</p>
 <?php 
   // Connexion à la base de données
      $connexion = new PDO( $dns, $bd['login'], $bd['motdepasse']);
@@ -55,6 +55,7 @@ $connexion = null;
    {
      // on a des fiches champignon en résultat, il faut les afficher
  
+	 echo "<div id=\"flex_annonce\">";  
      for ($i=0 ; $i<$donneesVue['nbResultats'] ; $i++) 
      {
        $regleDeStyle="annonces";
@@ -115,6 +116,7 @@ $connexion = null;
 	   echo "</section>"; //fin div image_information
        echo "</div>"; //fin div annonce $i
 	}
+	echo "</div>"; //fin de la zone flex des annonces 
    }
 ?>
 

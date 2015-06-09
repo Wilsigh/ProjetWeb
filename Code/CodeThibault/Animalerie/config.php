@@ -23,6 +23,7 @@
 							'vueElementaire_banniere' => 'vues/vueElementaire_banniere.html',
 							'vueElementaire_enchainementInvalide' => 'vues/vueElementaire_enchainementInvalide.html',
 							'vueElementaire_rechercheAvancee' => 'vues/vueElementaire_rechercheAvancee.html',
+							'vueElementaire_infoconnecte' => 'vues/vueElementaire_infoconnecte.html',
 							
 							'vueClient_compteConnecte' => 'vues/vuesClient/vueClient_compteConnecte.html',
 							'vueClient_modifierCompte' => 'vues/vuesClient/vueClient_modifierCompte.html',
@@ -81,8 +82,6 @@
 					'actionAdmin_historique' => 'actions/actionsAdmin/actionAdmin_historique.php',
 					'actionAdmin_supprimerAnnonce' => 'actions/actionsAdmin/actionAdmin_supprimerAnnonce.php',
 					'actionAdmin_supprimerCompte' => 'actions/actionsAdmin/actionAdmin_supprimerCompte.php'
-				   
-				   
 				   
 				   );
 
@@ -167,8 +166,5 @@
 
    // En phase de release :
       //ini_set("error_reporting",0); 
-
-
-
 
 ?>

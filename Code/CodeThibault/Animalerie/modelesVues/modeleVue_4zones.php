@@ -17,12 +17,16 @@ $donneesVue=$_SESSION['donneesVue'];
 <?php include $donneesVue['zone_haute'];?>
 </div>
 
-<div id="zone_gauche">
-<?php include $donneesVue['zone_gauche'];?>
+<div id="zone_info">
+<?php include $donneesVue['zone_info'];?>
 </div>
 
-<div id="zone_droite">
-<?php include $donneesVue['zone_droite'];?>
+<div id="zone_onglets">
+<?php include $donneesVue['zone_onglets'];?>
+</div>
+
+<div id="zone_gauche">
+<?php include $donneesVue['zone_gauche'];?>
 </div>
 
 <div id="zone_centrale">

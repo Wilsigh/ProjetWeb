@@ -17,6 +17,10 @@ $donneesVue=$_SESSION['donneesVue'];
 <?php include $donneesVue['zone_haute'];?>
 </div>
 
+<div id="zone_info">
+<?php include $donneesVue['zone_info'];?>
+</div>
+
 <div id="zone_onglets">
 <?php include $donneesVue['zone_onglets'];?>
 </div>

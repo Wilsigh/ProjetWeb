@@ -16,6 +16,7 @@ $_SESSION=array();
 
   // Definition des donnees structurelles de la vue
   $donneesVue['zone_haute']=$vuesElementaires['vueElementaire_banniere'];
+  $donneesVue['zone_info']=$vuesElementaires['vueElementaire_infoconnecte'];
   $donneesVue['zone_gauche']=$vuesElementaires['vueElementaire_recherche'];
   $donneesVue['zone_droite']=$vuesElementaires['vueElementaire_compteNonConnecte'];
   $donneesVue['zone_centrale']=$vuesElementaires['vueElementaire_toutesAnnonces'];

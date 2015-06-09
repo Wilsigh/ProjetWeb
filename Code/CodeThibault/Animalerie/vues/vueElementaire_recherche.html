@@ -1,18 +1,31 @@
 ﻿<form method="post" action="controleur.php?action=action_rechercherAnnonce">
 
-<h3> Rechercher une annonce </h3>
+<table id="table_recherche">
+		<tr>
+			<td>
+				<h4>Rechercher une annonce</h4>
+			</td>
+		</tr>
+		
+		<tr>
+			<td>
+				<!--Lien pour Recherche avancée -->
+				<a href="controleur.php?action=action_rechercheAvancee"> Passer en mode avanc&eacute;</a>
+			</td>
+	<!-- la fonction pattern  empeche la saisi de caractères spéciaux -->
+		</tr>
 
-<h4> Votre recherche </h4>
-<p>
-    <label></label>
-    <input id="boiteRecherche" name="AnnonceAchercher" size="12"/>
-</p>
+		<tr>
+			<td>
+				<input id="boiteRecherche" name="AnnonceAchercher" size="12"/>
+			</td>
+		</tr>
 
-<p>
-    <input value="Rechercher" type="submit" />
-</p>
-<p>
-<!--Lien pour Recherche avancée -->
-<a href="controleur.php?action=action_rechercheAvancee"> Recherche avancée </a>
-</p>
+		<tr>
+			<td>
+				<input value="Rechercher" type="submit" />
+			</td>
+		</tr>
+		
+	</table>
 </form>
