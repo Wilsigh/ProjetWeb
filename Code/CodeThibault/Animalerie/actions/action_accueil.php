@@ -10,9 +10,8 @@ switch ($_SESSION['privilege']) {
   
 		// Definition des données structurelles de la vue
 		$donneesVue['zone_haute']=$vuesElementaires['vueElementaire_banniere'];
-		$donneesVue['zone_info']=$vuesElementaires['vueElementaire_infoconnecte'];
+		$donneesVue['zone_info']=$vuesElementaires['vueClient_compteConnecte'];
 		$donneesVue['zone_gauche']=$vuesElementaires['vueElementaire_recherche'];
-		$donneesVue['zone_droite']=$vuesElementaires['vueClient_compteConnecte'];
 		$donneesVue['zone_centrale']=$vuesElementaires['vueElementaire_toutesAnnonces'];
 		$donneesVue['style']=$feuillesDeStyle['feuille1'];
 		
@@ -24,10 +23,9 @@ switch ($_SESSION['privilege']) {
   
 		// Definition des données structurelles de la vue
 		$donneesVue['zone_haute']=$vuesElementaires['vueElementaire_banniere'];
-		$donneesVue['zone_info']=$vuesElementaires['vueElementaire_infoconnecte'];
+		$donneesVue['zone_info']=$vuesElementaires['vuePro_compteConnecte'];
 		$donneesVue['zone_onglets']=$vuesElementaires['vuePro_onglets'];
 		$donneesVue['zone_gauche']=$vuesElementaires['vueElementaire_recherche'];
-		$donneesVue['zone_droite']=$vuesElementaires['vuePro_compteConnecte'];
 		$donneesVue['zone_centrale']=$vuesElementaires['vueElementaire_toutesAnnonces'];
 		$donneesVue['style']=$feuillesDeStyle['feuille1'];
   
@@ -40,10 +38,9 @@ switch ($_SESSION['privilege']) {
   
 		// Definition des données structurelles de la vue
 		$donneesVue['zone_haute']=$vuesElementaires['vueElementaire_banniere'];
-		$donneesVue['zone_info']=$vuesElementaires['vueElementaire_infoconnecte'];
+		$donneesVue['zone_info']=$vuesElementaires['vueAdmin_compteConnecte'];
 		$donneesVue['zone_onglets']=$vuesElementaires['vueAdmin_onglets'];
 		$donneesVue['zone_gauche']=$vuesElementaires['vueElementaire_recherche'];
-		$donneesVue['zone_droite']=$vuesElementaires['vueAdmin_compteConnecte'];
 		$donneesVue['zone_centrale']=$vuesElementaires['vueElementaire_toutesAnnonces'];
 		$donneesVue['style']=$feuillesDeStyle['feuille1'];
   
@@ -60,9 +57,8 @@ switch ($_SESSION['privilege']) {
 		// Definition des données structurelles de la vue
 		$donneesVue['zone_haute']=$vuesElementaires['vueElementaire_banniere'];
 		$donneesVue['zone_info']=$vuesElementaires['vueElementaire_infoconnecte'];
-		$donneesVue['zone_onglets']=$vuesElementaires['vueElementaire_onglets'];
+		$donneesVue['zone_onglets']=$vuesElementaires['vueElementaire_compteNonConnecte'];
 		$donneesVue['zone_gauche']=$vuesElementaires['vueElementaire_recherche'];
-		$donneesVue['zone_droite']=$vuesElementaires['vueElementaire_compteNonConnecte'];
 		$donneesVue['zone_centrale']=$vuesElementaires['vueElementaire_toutesAnnonces'];
 		$donneesVue['style']=$feuillesDeStyle['feuille1'];
 

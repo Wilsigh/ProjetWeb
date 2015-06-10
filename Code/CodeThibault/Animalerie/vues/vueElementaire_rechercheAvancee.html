@@ -1,41 +1,71 @@
-
 <!-- Mise en place du formulaire -->
 <form method="post" action="controleur.php?action=action_rechercherAnnonce">
 
-  <p> <b>Recherche Avancée </b> </p>
-   
-  <p>
-	<label for="titre">Titre :</label>
-    <input type="text" name="titre" size="20" />
-  
-    <label for="type">Type :</label>
-    <select name="type" id="sexe">
-	<option value="Chien">Chien</option>
-	<option value="Chat">Chat</option>
-	<option value="Poisson">Poisson</option>
-	<option value="Oiseau">Oiseau</option>
-	<option value="Rongeur">Rongeur</option>
-	<option value="Reptile">Reptile</option>
-	<option value="Autre">Autre</option>
-	</select>
-  
-  
-    <label for="sexe">Sexe :</label>
-    <select name="sexe" id="sexe">
-	<option value="Male">Mâle</option>
-	<option value="Femelle">Femelle</option>
-	</select>
-  
-   Race :
-    <input type="text" name="race" />
-  </p>
-  <p>
-    <input value="Rechercher" type="submit" />
-</p>
+
+	<table id="table_recherche_avance">
+		<thead>
+			<tr>
+				<td>
+					<p class="titre">Recherche Avancée</p>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+					<!--Lien pour Recherche normal (page_accueil) -->
+					<a class="titre2" href="controleur.php?action=action_accueil"> Revenir en mode normal</a>
+				</td>
+			</tr>
+		</thead>
+		
+		<tfoot>
+			<tr>
+				<td>
+					<input class="taillew" value="Rechercher" type="submit" />
+				</td>
+			</tr>
+		</tfoot>
+		
+		<tbody>
+			<tr>
+				<td>
+						<label for="titre">Titre :</label>
+						<input type="text" name="titre" size="20" />
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+						<label for="type">Type :</label>
+						<select name="type" id="sexe">
+							<option value="Chien">Chien</option>
+							<option value="Chat">Chat</option>
+							<option value="Poisson">Poisson</option>
+							<option value="Oiseau">Oiseau</option>
+							<option value="Rongeur">Rongeur</option>
+							<option value="Reptile">Reptile</option>
+							<option value="Autre">Autre</option>
+						</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+						<label for="sexe">Sexe :</label>
+						<select name="sexe" id="sexe">
+							<option value="Male">Mâle</option>
+							<option value="Femelle">Femelle</option>
+							<option value="Femelle">Mixte</option>
+						</select>
+				</td>
+			</tr>
+			
+			<tr>
+				<td>
+						<label for="race">Race :</label>
+						<input type="text" name="race" />
+				</td>
+			</tr>
+		</tbody>			
+	</table>
 </form>
-<br>
-<!--Lien vers la page d'accueil-->
-<p>
-<!--Lien vers la page d'accueil-->
-<a href="controleur.php?action=action_accueil"> Revenir &agrave; la page d'accueil </a>
-</p>
